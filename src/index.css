@@ -93,3 +93,70 @@
   background-size: 200% 100%;
   animation: shimmer 2s infinite linear;
 }
+
+/* Cloud animations */
+@keyframes float-slow {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(20px) translateY(-10px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes float-medium {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-15px) translateY(-5px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes float-fast {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(10px) translateY(-15px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+.cloud {
+  border-radius: 50%;
+  position: relative;
+  opacity: 0.8;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 50%;
+  height: 50%;
+  top: -25%;
+  left: 25%;
+}
+
+.cloud::after {
+  width: 60%;
+  height: 60%;
+  top: -15%;
+  left: 50%;
+}
+
+.cloud-1 {
+  animation: float-slow 15s ease-in-out infinite;
+}
+
+.cloud-2 {
+  animation: float-medium 18s ease-in-out infinite;
+}
+
+.cloud-3 {
+  animation: float-fast 12s ease-in-out infinite;
+}
+
+.cloud-4 {
+  animation: float-medium 20s ease-in-out infinite;
+}
+
+.cloud-5 {
+  animation: float-slow 25s ease-in-out infinite;
+}
